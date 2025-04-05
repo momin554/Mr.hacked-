@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Hack - MR-MOMIN</title>
+  <style>
+    /* Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1a1a1a; /* ডার্ক গ্রে */
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffff; /* সায়ান লুক */
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1, p {
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #9900ff, 0 0 30px #ff00ff; /* গ্লো ফিউশন */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 30px;
+      color: #ff00ff; /* ম্যাজেন্টা গ্লো */
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .alert-box, .report-box {
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px dashed #00ffff; /* সায়ান বর্ডার */
+      width: 90%;
+      max-width: 400px;
+      background: rgba(0, 255, 255, 0.1); /* ট্রান্সপারেন্ট সায়ান */
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #9900ff; /* সায়ান এবং নীল গ্লো */
+      border-radius: 10px;
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 10px;
+      margin: 20px 0;
+      border: 2px solid #00ffff;
+      background: #001f33; /* ডিপ ব্লু */
+      color: #00ffff;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .submit-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #1a1a1a; /* ব্ল্যাক টেক্সট */
+      background: #00ffff; /* সায়ান বাটন */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #9900ff; /* গ্লো */
+    }
+
+    .submit-btn:hover {
+      background: #ff00ff; /* হোভার ম্যাজেন্টা */
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #9900ff; /* গ্লো হোভার */
+    }
+
+    .report-list {
+      text-align: left;
+      padding: 10px;
+      font-size: 1rem;
+      color: #00ffff; /* সায়ান */
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #00ffff;
+      background: #1a1a1a; /* ডার্ক ব্যাকগ্রাউন্ড */
+    }
+
+    .report-list span {
+      color: #ff00ff; /* ম্যাজেন্টা */
+      font-weight: bold;
+    }
+
+    .progress {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff; /* গ্লো প্রগ্রেস বার */
+    }
+
+    /* MR-MOMIN Special Message */
+    #footer {
+      margin-top: 50px;
+      font-size: 1.5rem;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Section -->
+  <div id="main-section">
+    <h1>⚠️ MR-MOMIN দ্বারা সিস্টেম তৈরি ⚠️</h1>
+    <div class="alert-box">
+      <p>আপনার টিকটক ইউজারনেম দিন:</p>
+      <input type="text" class="input-box" id="username" placeholder="ইউজারনেম লিখুন">
+      <button class="submit-btn" onclick="startAttack()">🔥 হ্যাকিং শুরু করুন 🔥</button>
+    </div>
+  </div>
+
+  <!-- Attack Section -->
+  <div id="attack-section" style="display: none;">
+    <h1>⚠️ MR-MOMIN এর সিস্টেম চলছে ⚠️</h1>
+    <div class="report-box">
+      <p>⚡ রিপোর্ট পাঠানো হচ্ছে ⚡</p>
+      <div class="report-list" id="report-list">
+        <!-- Dynamic Reports Will Show Here -->
+      </div>
+      <div class="progress" id="progress">মোট রিপোর্ট: <span id="total-reports">0</span></div>
+    </div>
+  </div>
+
+  <!-- Footer Message -->
+  <div id="footer">
+    Powered by MR-MOMIN | Remember the Name!
+  </div>
+
+  <script>
+    let reportCount = 0;
+
+    function startAttack() {
+      const username = document.getElementById('username').value;
+
+      if (!username) {
+        alert('ইউজারনেম লিখুন, না হলে হ্যাকিং শুরু হবে না!');
+        return;
+      }
+
+      // Hide Main Section and Show Attack Section
+      document.getElementById('main-section').style.display = 'none';
+      document.getElementById('attack-section').style.display = 'block';
+
+      // Start Report Attack
+      generateReport();
+    }
+
+    function generateReport() {
+      const reportList = document.getElementById('report-list');
+      const totalReports = document.getElementById('total-reports');
+
+      setInterval(() => {
+        // Add a new "report"
+        reportCount++;
+        const reportItem = document.createElement('p');
+        reportItem.innerHTML = `⚡ রিপোর্ট <span>#${reportCount}</span> সফলভাবে পাঠানো হয়েছে!`;
+        reportList.appendChild(reportItem);
+
+        // Scroll to bottom of the report box
+        reportList.scrollTop = reportList.scrollHeight;
+
+        // Update total reports count
+        totalReports.innerText = reportCount;
+      }, 500); // প্রতি ০.৫ সেকেন্ডে রিপোর্ট
+    }
+  </script>
+</body>
+</html>
